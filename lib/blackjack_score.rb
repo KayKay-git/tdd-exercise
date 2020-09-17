@@ -3,11 +3,14 @@
 VALID_CARDS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace']
 
 
-cards_in_hand = VALID_CARDS.sample(2)
-pp cards_in_hand
+cards_in_hand = ["Jack", "Queen", 10, 5, 6, 8]
 
 
 def blackjack_score(hand)
+
+  if hand.length < 2 || hand.length > 5
+    raise ArgumentError.new("Wrong amount of cards")
+  end
 
   score = 0
 
@@ -34,10 +37,10 @@ def blackjack_score(hand)
   if score > 21
     raise ArgumentError.new("You lose")
   end
+
     return score
-  
+
 end
 
-
-pp blackjack_score(cards_in_hand)
+# pp blackjack_score(cards_in_hand)
 
