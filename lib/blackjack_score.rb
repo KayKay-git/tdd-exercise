@@ -2,9 +2,6 @@
 
 VALID_CARDS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace']
 
-# Test Deck
-# cards_in_hand = VALID_CARDS.sample(5)
-
 def blackjack_score(hand)
   # Check for number of cards in hand
   if hand.length < 2 || hand.length > 5
@@ -39,5 +36,4 @@ def blackjack_score(hand)
     return score
 end
 
-# pp blackjack_score(cards_in_hand)
 
