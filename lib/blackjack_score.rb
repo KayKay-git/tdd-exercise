@@ -2,12 +2,11 @@
 
 VALID_CARDS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace']
 
-
-cards_in_hand = ["Jack", "Queen", 10, 5, 6, 8]
-
+# Test Deck
+# cards_in_hand = VALID_CARDS.sample(5)
 
 def blackjack_score(hand)
-
+  # Check for number of cards in hand
   if hand.length < 2 || hand.length > 5
     raise ArgumentError.new("Wrong amount of cards")
   end
@@ -15,7 +14,7 @@ def blackjack_score(hand)
   score = 0
 
   hand.each do |item|
-
+    # Check if each card is valid. Determine value of Ace and tally it.
     if VALID_CARDS.include?(item)
       case item
       when "Jack", "Queen", "King"
@@ -33,13 +32,11 @@ def blackjack_score(hand)
       raise ArgumentError.new("You have an Invalid card")
     end
   end
-
+  # Losing condition
   if score > 21
     raise ArgumentError.new("You lose")
   end
-
     return score
-
 end
 
 # pp blackjack_score(cards_in_hand)
