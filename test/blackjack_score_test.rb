@@ -72,4 +72,18 @@ describe 'Blackjack Score' do
     expect { blackjack_score(hand) }.must_raise ArgumentError
   end
 
+  it 'raises an ArgumentError for hand > 5 ' do
+    # Arrange
+    hand = [10,5,5,5,6,7]
+    # deck = hand.length
+    expect { blackjack_score(hand) }.must_raise ArgumentError
+  end
+
+  it 'raises an ArgumentError for hand < 2' do
+    # Arrange
+    hand = [10]
+    # deck = hand.length
+    expect { blackjack_score(hand) }.must_raise ArgumentError
+  end
+
 end
